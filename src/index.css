@@ -1,0 +1,316 @@
+/* TODO: Разбить CSS на файлы */
+
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+section {
+  width: 75vw;
+  min-width: 500px;
+  margin: auto;
+  flex: 1 0 auto;
+  background: whitesmoke;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12),
+    0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12),
+    0 16px 16px rgba(0, 0, 0, 0.12);
+}
+
+.sort-group {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 10px;
+  min-height: 50px;
+  background: whitesmoke;
+}
+
+.main-content {
+  min-height: 78vh;
+  background: whitesmoke;
+}
+
+.pagination {
+  margin: 15px 0;
+  height: 65px;
+}
+
+.sneaker-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+
+.sneaker-card {
+  height: 490px;
+  width: 425px;
+  padding: 10px;
+  margin: 10px;
+  background: white;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12),
+    0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12),
+    0 16px 16px rgba(0, 0, 0, 0.12);
+}
+
+.sneaker-title {
+  height: 25px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.sneaker-card p.colorway {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.sneaker-img {
+  max-height: 500px;
+  max-width: 333px;
+}
+
+.add-to-favorite {
+  margin-right: 10px;
+  background-color: rgb(187, 187, 187);
+  border: 1px solid rgb(155, 155, 155);
+  cursor: pointer;
+  float: right;
+}
+
+.add-to-favorite:hover {
+  background-color: rgb(155, 155, 155);
+}
+
+/*Пагинация*/
+.pag-btn {
+  border: none;
+  background: whitesmoke;
+  cursor: pointer;
+}
+
+.material-icons.md-48.md-inactive {
+  color: rgb(155, 155, 155);
+  cursor: default;
+}
+
+.material-icons.md-48 {
+  color: black;
+  font-size: 48px;
+  vertical-align: middle;
+}
+
+.inactive-link {
+  display: none;
+}
+
+.material-icons.md-48.page-number {
+  font-family: Roboto;
+}
+
+/* Loader */
+.lds-dual-ring {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid black;
+  border-color: black transparent black transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loader-wrapper {
+  height: 76vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Sort */
+.sort-name {
+  float: left;
+  margin-right: 5px;
+  padding: 9px 5px;
+}
+
+.btn-group {
+  margin: 10px;
+}
+
+.btn-group button {
+  background-color: rgb(187, 187, 187);
+  border: 1px solid rgb(155, 155, 155);
+  padding: 5px 16px;
+  cursor: pointer;
+  float: left;
+}
+
+.btn-group:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.btn-group button:not(:last-child) {
+  border-right: none;
+}
+
+.btn-group button:hover {
+  background-color: rgb(155, 155, 155);
+}
+
+/* Модальное окно */
+.overlay {
+  opacity: 0;
+  position: fixed;
+
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 20;
+  transition: 0.3s all;
+}
+
+.modal {
+  opacity: 0;
+
+  width: 100%;
+  max-width: 550px;
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 30;
+
+  box-shadow: 0 3px 10px -0.5px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  padding: 30px;
+  border-radius: 3px;
+  background-color: #fff;
+  transition: 0.3s all;
+}
+
+.modal.active,
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.open-modal {
+  margin-top: 20px;
+  padding: 5px;
+
+  font-family: Roboto;
+  font-size: 16px;
+  background-color: rgb(187, 187, 187);
+  border: 1px solid rgb(155, 155, 155);
+  cursor: pointer;
+}
+
+.open-modal:hover {
+  background-color: rgb(155, 155, 155);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0 20px 15px;
+  font-size: 16px;
+}
+
+#emailInput {
+  padding: 5px;
+}
+
+.modal-close {
+  cursor: pointer;
+}
+
+.modal-btn {
+  cursor: pointer;
+}
+
+.modal-body {
+  max-height: 425px;
+  padding: 10px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.fav-sneaker-card {
+  display: flex;
+  justify-content: space-between;
+  width: 500px;
+  height: 75px;
+  box-shadow: 0 3px 10px -0.5px rgba(0, 0, 0, 0.2);
+
+  margin: auto;
+}
+
+.fav-sneaker-img {
+  width: 100px;
+  height: 66px;
+  padding: 5px;
+}
+
+span.fav-sneaker-title {
+  overflow: hidden;
+  width: 320px;
+}
+
+.detele-card-btn {
+  padding-right: 30px;
+  padding-top: 25px;
+  cursor: pointer;
+}
+
+.modal-btn.btn-clear-fav {
+  width: 125px;
+  height: 40px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.modal-btn {
+  width: 85px;
+  height: 30px;
+  padding: 5px;
+  background-color: rgb(187, 187, 187);
+  border: 1px solid rgb(155, 155, 155);
+  font-family: Roboto;
+  font-size: 14px;
+}
+
+.modal-btn:hover {
+  background-color: rgb(155, 155, 155);
+}

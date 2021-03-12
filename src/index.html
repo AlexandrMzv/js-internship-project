@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
+    <title>JS project</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
+  <body>
+
+    <div id="modal-favorites" class="modal-window" style="display: none;">
+      <div class="modal">
+        <div class="modal-header">
+          <span>Избранное</span>
+          <span class="material-icons modal-close" data-modal="close">
+            close
+          </span>
+        </div>
+        <div class="modal-body">
+        </div>
+        <p>Сохранить избранное в базе</p>
+        <div>
+          <input type="text" id="inputEmail" placeholder="Введите email" style="padding: 5px;">
+          <button type="button" data-modal="close" class="modal-btn modal-close">Закрыть</button>
+          <button type="submit" class="modal-btn modal-save" disabled="true">Отправить</button>
+        </div>
+      </div>
+      <div class="overlay"></div>
+    </div>
+
+    <section>
+      <div class="header-buttons">
+        <button id="open-modal" class="open-modal">
+          <span class="material-icons">
+            favorite
+          </span>
+          <span class="fav-button-text" style="vertical-align: super;">
+            Избранное
+          </span>
+        </button>
+
+        <div class="sort-group">
+          <div class="btn-group">
+            <div class="sort-name">Retail price</div>
+            <button id="retail-desc" class="sort-btn">
+              <span class="material-icons">
+                expand_more
+              </span>
+            </button>
+            <button id="retail-asc" class="sort-btn">
+              <span class="material-icons">
+                expand_less
+              </span>
+            </button>
+          </div>
+          <div class="btn-group">
+            <div class="sort-name">Resale price</div>
+            <button id="resale-desc" class="sort-btn">
+              <span class="material-icons">
+                expand_more
+              </span>
+            </button>
+            <button id="resale-asc" class="sort-btn">
+              <span class="material-icons">
+                expand_less
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="main-content">
+        <div class="loader-parent"></div>
+        <div class="sneaker-list"></div>
+      </div>
+      <div class="pagination">
+      </div>
+    </section>
+  </body>
+</html>
