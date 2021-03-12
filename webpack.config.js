@@ -4,8 +4,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 module.exports = {
-  //TODO: Убрать dev mode
-  mode: "development",
   entry: ['babel-polyfill', './src/js/index.js'],
     output: {
       path: path.resolve(__dirname, 'dist'),
